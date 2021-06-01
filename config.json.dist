@@ -5,15 +5,18 @@
   "credentials": {
     "Instructor01": {
       "username": "",
-      "password": ""
+      "password": "",
+      "name": ""
     },
     "Instructor02": {
       "username": "",
-      "password": ""
+      "password": "",
+      "name": ""
     },
     "Student01": {
       "username": "",
-      "password": ""
+      "password": "",
+      "name": ""
     }
   }
 }

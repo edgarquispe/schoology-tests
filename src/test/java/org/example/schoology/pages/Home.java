@@ -2,6 +2,8 @@ package org.example.schoology.pages;
 
 import org.example.core.Environment;
 import org.example.schoology.Resources;
+import org.example.schoology.pages.jorge.user.I18NUser;
+import org.example.schoology.pages.jorge.user.User;
 import org.openqa.selenium.By;
 
 import org.example.core.ui.AbstractPage;
@@ -30,4 +32,12 @@ public class Home extends AbstractPage {
         return new SubMenu();
     }
 
+    public User clickProfile(String account) {
+        String userName = Environment.getInstance().getValue(String.format("credentials.%s.name", account));
+        action.click(driver.findElement(By.xpath(String.format("//div[text()='%s']/parent::div/parent::button", userName))));
+        final String profileName = "Your Profile";
+        String profileOption = ResourceBundle.getBundle(Resources.I18N_USER, Environment.getInstance().getLocale()).getString(I18NUser.getI18nKey(profileName));
+        action.click(driver.findElement(By.xpath(String.format("//a[text()='%s']", profileOption))));
+        return new User();
+    }
 }

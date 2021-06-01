@@ -7,6 +7,7 @@ import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.schoology.pages.jorge.user.I18NUser;
 import org.example.schoology.pages.resources.I18NResource;
 import org.testng.asserts.Assertion;
 
@@ -90,4 +91,10 @@ public class CommonStepDefs {
                 "Message banner");
     }
 
+    @Then("I should see the {string} message in User Profile")
+    public void iShouldSeeTheMessageInUserProfile(final String message) {
+        resourceBundle = ResourceBundle.getBundle(Resources.I18N_USER,Environment.getInstance().getLocale());
+        assertion.assertEquals(new ViewList().getMessage(), resourceBundle.getString(I18NUser.getI18nKey(message)),
+                "Message banner");
+    }
 }
