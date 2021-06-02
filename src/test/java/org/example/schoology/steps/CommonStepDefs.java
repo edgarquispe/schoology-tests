@@ -30,10 +30,13 @@ public class CommonStepDefs {
     private Home home;
 
     private ResourceBundle resourceBundle;
+    private ResourceBundle menuResourceBundle;
 
     public CommonStepDefs(final SharedDriver sharedDriver, final AssertionGroup assertionGroup) {
         assertion = assertionGroup.getAssertion();
         resourceBundle = ResourceBundle.getBundle(Resources.I18N_COURSE,
+                Environment.getInstance().getLocale());
+        menuResourceBundle= ResourceBundle.getBundle(Resources.I18N_MENU,
                 Environment.getInstance().getLocale());
     }
 
@@ -70,7 +73,7 @@ public class CommonStepDefs {
 
     @When("I navigate to {string}")
     public void iNavigateToCourses(final String menu) {
-        SubMenu subMenu = home.clickMenu(resourceBundle.getString(menu.toLowerCase()));
+        SubMenu subMenu = home.clickMenu(menuResourceBundle.getString(menu.toLowerCase()));
         // Not put logic
         // for instance: if else, loops read files, handles strings, mathematical operations.
         subMenu.clickViewListLink(menu);

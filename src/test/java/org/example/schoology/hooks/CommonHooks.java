@@ -1,5 +1,6 @@
 package org.example.schoology.hooks;
 
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Then;
 import org.testng.asserts.SoftAssert;
@@ -17,6 +18,11 @@ public class CommonHooks {
     @Before(value = "@softAssert")
     public void beforeSoftAssert() {
         assertionGroup.setAssertion(new SoftAssert());
+    }
+
+    @After(value = "@softAssert")
+    public void afterSoftAssertAssertAll() {
+        ((SoftAssert) assertionGroup.getAssertion()).assertAll();
     }
 
     @Then("I assert all")

@@ -49,7 +49,7 @@ public class ResourcesStepDefs {
     @When("I delete the {string} resource")
     public void iDeleteTheFolderResource(final String name) {
         new ViewList().waitForMessageToBeHidden();
-        resources.deleteFolderResource(name);
+        resources.deleteResource(name);
     }
 
     @And("I should not see {string} resource")

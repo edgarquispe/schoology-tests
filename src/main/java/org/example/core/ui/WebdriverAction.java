@@ -2,10 +2,14 @@ package org.example.core.ui;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 public class WebdriverAction {
 
@@ -49,5 +53,40 @@ public class WebdriverAction {
         wait.until(ExpectedConditions.visibilityOf(webElement));
         webElement.clear();
         webElement.sendKeys(value);
+    }
+
+    public void setValue(final By locator, final String text) {
+        setValue(driver.findElement(locator), text);
+    }
+
+    public boolean isElementPresent(final By locator, final int waitTime) {
+        try {
+            // Changing timeout
+            driver.manage().timeouts().implicitlyWait(waitTime, TimeUnit.SECONDS);
+            driver.findElement(locator);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        } finally {
+            // Restore timeout
+            driver.manage().timeouts().implicitlyWait(AbstractPage.DEFAULT_IMPLICIT_TIMEOUT, TimeUnit.SECONDS);
+        }
+    }
+
+    public void selectCheckBox(WebElement checkbox) {
+        if (!checkbox.isSelected()) {
+            click(checkbox);
+        }
+    }
+
+    public void selectCheckBox(final By locator) {
+        WebElement checkbox = driver.findElement(locator);
+        selectCheckBox(checkbox);
+    }
+
+    public void selectDropDown(final WebElement webElement, final String option) {
+        wait.until(ExpectedConditions.visibilityOf(webElement));
+        Select selectField = new Select(webElement);
+        selectField.selectByVisibleText(option);
     }
 }
