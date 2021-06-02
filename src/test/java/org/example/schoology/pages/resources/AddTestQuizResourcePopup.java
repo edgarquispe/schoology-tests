@@ -25,7 +25,7 @@ public class AddTestQuizResourcePopup extends AddResourcePopupAbstract {
     }
 
     @Override
-    protected Map<String, Step> getStepsMap(Map<String, String> resourceMap) {
+    protected Map<String, Step> getStepsMap(final   Map<String, String> resourceMap) {
         Map<String, Step> stepsMap = new HashMap<>();
         stepsMap.put(Constants.NAME, () -> setName(resourceMap.get(Constants.NAME)));
         stepsMap.put("Max points", () -> setMaxPoints(resourceMap.get("Max points")));

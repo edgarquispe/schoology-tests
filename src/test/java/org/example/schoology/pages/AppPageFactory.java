@@ -12,7 +12,11 @@ import org.example.schoology.pages.resources.AddTestQuizResourcePopup;
 import java.util.HashMap;
 import java.util.function.Supplier;
 
-public class AppPageFactory {
+public final class AppPageFactory {
+
+    private AppPageFactory() {
+        // Not implemented
+    }
 
     public static AddResourcePopupAbstract getAddResourcePopup(final String resourceType) {
         HashMap<ResourceType, Supplier<AddResourcePopupAbstract>> addResourcePopupMap = new HashMap<>();

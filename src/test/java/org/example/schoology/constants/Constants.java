@@ -4,6 +4,10 @@ import org.example.core.StringHelper;
 
 public final class Constants {
 
+    private Constants() {
+        // Not implemented
+    }
+
     public enum ResourceType {
         QUESTION_BANK,
         TEST_QUIZ;

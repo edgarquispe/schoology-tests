@@ -16,7 +16,7 @@ public class AddQuestionBankResourcePopup extends AddResourcePopupAbstract {
     @FindBy(css = "#edit-description")
     private WebElement descriptionTextArea;
 
-    @FindBy(css = "#edit-enable-tracking" )
+    @FindBy(css = "#edit-enable-tracking")
     private WebElement enableQuestionTrackingCheckBox;
 
     private void setName(final String name) {

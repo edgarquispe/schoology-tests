@@ -17,7 +17,7 @@ public class CreateEssayQuestion extends CreateQuestionAbstract {
     private WebElement characterLimitTextBox;
 
     @Override
-    protected Map<String, Step> getStepsMap(Map<String, String> questionMap) {
+    protected Map<String, Step> getStepsMap(final Map<String, String> questionMap) {
         Map<String, Step> stepsMap = new HashMap<>();
         stepsMap.put(Constants.TITLE, () -> setTitle(questionMap.get(Constants.TITLE)));
         stepsMap.put(Constants.CHARACTER_LIMIT, () -> setCharacterLimit(questionMap.get(Constants.CHARACTER_LIMIT)));

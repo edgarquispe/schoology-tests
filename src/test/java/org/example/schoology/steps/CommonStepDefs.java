@@ -36,7 +36,7 @@ public class CommonStepDefs {
         assertion = assertionGroup.getAssertion();
         resourceBundle = ResourceBundle.getBundle(Resources.I18N_COURSE,
                 Environment.getInstance().getLocale());
-        menuResourceBundle= ResourceBundle.getBundle(Resources.I18N_MENU,
+        menuResourceBundle = ResourceBundle.getBundle(Resources.I18N_MENU,
                 Environment.getInstance().getLocale());
     }
 

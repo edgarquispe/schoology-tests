@@ -55,14 +55,10 @@ public class WebdriverAction {
         webElement.sendKeys(value);
     }
 
-    public void setValue(final By locator, final String text) {
-        setValue(driver.findElement(locator), text);
-    }
-
-    public boolean isElementPresent(final By locator, final int waitTime) {
+    public boolean isElementPresent(final By locator) {
         try {
             // Changing timeout
-            driver.manage().timeouts().implicitlyWait(waitTime, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
             driver.findElement(locator);
             return true;
         } catch (NoSuchElementException e) {
@@ -73,15 +69,10 @@ public class WebdriverAction {
         }
     }
 
-    public void selectCheckBox(WebElement checkbox) {
+    public void selectCheckBox(final WebElement checkbox) {
         if (!checkbox.isSelected()) {
             click(checkbox);
         }
-    }
-
-    public void selectCheckBox(final By locator) {
-        WebElement checkbox = driver.findElement(locator);
-        selectCheckBox(checkbox);
     }
 
     public void selectDropDown(final WebElement webElement, final String option) {

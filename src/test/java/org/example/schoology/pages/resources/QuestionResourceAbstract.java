@@ -40,7 +40,7 @@ public abstract class QuestionResourceAbstract extends AbstractPage {
     public abstract String getResourceName();
 
     public boolean isQuestionDisplayed(final String questionTitle) {
-        return action.isElementPresent(By.xpath(String.format(QUESTION_TITLE_XPATH, questionTitle)), 3);
+        return action.isElementPresent(By.xpath(String.format(QUESTION_TITLE_XPATH, questionTitle)));
     }
 
     public String getQuestionTypeByTitle(final String questionTitle) {

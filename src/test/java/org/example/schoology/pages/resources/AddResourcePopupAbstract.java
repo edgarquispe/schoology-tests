@@ -29,5 +29,5 @@ public abstract class AddResourcePopupAbstract extends AbstractPage {
         return new ResourcesPage();
     }
 
-    protected abstract Map<String, Step> getStepsMap(final Map<String, String> resourceMap);
+    protected abstract Map<String, Step> getStepsMap(Map<String, String> resourceMap);
 }

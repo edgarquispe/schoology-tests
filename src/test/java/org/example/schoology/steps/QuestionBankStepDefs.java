@@ -8,11 +8,9 @@ import org.example.core.Environment;
 import org.example.core.ScenarioContext;
 import org.example.schoology.Resources;
 import org.example.schoology.constants.Constants;
-import org.example.schoology.pages.AppPageFactory;
 import org.example.schoology.pages.questions.CreateQuestionAbstract;
 import org.example.schoology.pages.resources.AddResourcePopupAbstract;
 import org.example.schoology.pages.resources.QuestionBankResource;
-import org.example.schoology.pages.resources.QuestionResourceAbstract;
 import org.example.schoology.pages.resources.ResourcesPage;
 import org.testng.asserts.Assertion;
 
@@ -27,7 +25,7 @@ public class QuestionBankStepDefs {
 
     // Pages
     private ResourcesPage resources;
-    QuestionBankResource questionBankResource;
+    private QuestionBankResource questionBankResource;
 
     private final ResourceBundle bundle;
 

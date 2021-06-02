@@ -27,12 +27,12 @@ public abstract class CreateQuestionAbstract extends AbstractSchoologyModal {
         }
     }
 
-    public QuestionBankResource createQuestion(Map<String, String> questionMap) {
+    public QuestionBankResource createQuestion(final Map<String, String> questionMap) {
         Map<String, Step> stepsMap = getStepsMap(questionMap);
         questionMap.keySet().forEach(keyField -> stepsMap.get(keyField).execute());
         clickSubmitButton();
         return new QuestionBankResource();
     }
 
-    protected abstract Map<String, Step> getStepsMap(final Map<String, String> questionMap);
+    protected abstract Map<String, Step> getStepsMap(Map<String, String> questionMap);
 }
