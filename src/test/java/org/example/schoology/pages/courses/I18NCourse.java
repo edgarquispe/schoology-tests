@@ -7,7 +7,9 @@ public enum I18NCourse {
     SUBJECT_AREA_MATHEMATICS("Mathematics", "course.subject_area.mathematics"),
     LEVEL_UNDERGRADUATE("Undergraduate", "course.level.undergraduate"),
     SUBJECT_AREA_SCIENCE("Science", "course.subject_area.science"),
-    MESSAGE("The section has been updated.", "course.message");
+    SUBJECT_AREA_TECHNOLOGY("Technology", "course.subject_area.technology"),
+    MESSAGE("The section has been updated.", "course.message"),
+    SECTION_MESSAGE("Successfully created", "course.section.add.message");
 
     private final String uiName;
     private final String i18nKey;
