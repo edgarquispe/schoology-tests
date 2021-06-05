@@ -1,0 +1,19 @@
+{
+  "browser": "chrome",
+  "threadCount": "1",
+  "language": "en",
+  "credentials": {
+    "Instructor01": {
+      "username": "",
+      "password": ""
+    },
+    "Instructor02": {
+      "username": "",
+      "password": ""
+    },
+    "Student01": {
+      "username": "",
+      "password": ""
+    }
+  }
+}
