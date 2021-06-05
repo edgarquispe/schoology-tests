@@ -5,12 +5,8 @@ jdk:
 before_script:
 - chmod +x gradlew
 script:
-  #  static code analysis
-  #  run unit test for automation framework
-  - ./gradlew clean check
-
-  #  run bdd test
-  - ./gradlew clean runFeatures
+- "./gradlew clean check"
+- "./gradlew clean runFeatures"
 before_install:
 - openssl aes-256-cbc -K $encrypted_c5fd3201494e_key -iv $encrypted_c5fd3201494e_iv
   -in config.json.enc -out config.json -d
